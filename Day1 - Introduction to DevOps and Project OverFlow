@@ -1,0 +1,29 @@
+16th March 2025 ---> Day 1: Introdcution  for SDLC Model and DevOps Project Flow      
+----------------------------------------------------------------------------------
+
+--> In IT in Every Project follows Some SDLC (Sofware Development Life Cycle) Models. 
+--> Every SDLC Model we have many phases/Stages.These are
+                                                1) Requirement Gathering & Analysis
+                                                2) System Design
+                                                3) Implentation
+                                                4) Testing
+                                                5) Deployment
+                                                6) Monitoring
+
+we have a Several SDLC Models.These are 2 Important SDLC Models
+1. WaterFall Model
+2. Agile Model
+
+Waterfall Model:
+----------------
+-> In Stage1  : IN WaterFall Model we are collecting requirements from client and anaylise the requirements.
+-> Once Everything is Completed Then only we have to Go Next Phase(System Design). Once System Design is Completed then only we are going for Implementation Phase.Same process will be happend until Monitoring Stage
+-> In Waterfall model if one stage of People are Working on their Tasks remaning stages/Phase peoples are don't have any Work.
+-> In this SDLC Model we have Gap between every Phase. there is proper Communication in every stages.
+-> For Example if Developers are working on writing Some Code for some Features in that remaning phase peoples(Testing,Operations,System Designs) are don't have any work.  
+-> After few Days/ Months If client wants to add few more new features in middle of the project. that is not possible. if we ready to implement the new features then again we need to start from Stage1.
+-> Client Satisfaction is Very Less in WaterFall Model.
+
+Agile Model:
+------------
+-> In SDLC Agile Model 
