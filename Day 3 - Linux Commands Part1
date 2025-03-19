@@ -1,0 +1,65 @@
+Day 3 : Basic Linux Commnads
+----------------------------
+--> Linus Torvalds was introduced Linux Os in the 1991.
+--> Linux is FreeWare and open source Operating System
+--> Linux is Lightweight Operating System
+--> Linux is High Security Os
+--> Linux Supports Multi-User and Multi Tasking
+--> Linux is case sensitive Operating System
+
+
+Linux Distributions (or) Flavours
+----------------------------------
+--> In IT world we have so many Linux Ditributions. These are the Flavours used widely in IT
+  
+              1) RedHat Enterprise Linux OS (RHEL)
+              2) ubuntu
+              3) CentOs
+              4) Fedora
+              5) debian
+              6) Suse
+              7) Amazon Linux
+              8) Open Suse
+
+we have many more linux Distributions
+
+***Linux File System Hierarchy
+  -----------------------------
+  /      -->   Top Most Directory in the Linux Operating System
+/home    -->   Users will created under /home direcory.Stores user-specific files and directories.
+/bin     -->   Normal Users Commands will be there in bin Directory   
+                          Ex: pwd,ls,rm,rmdir,cd,touch,mkdir......
+/sbin    -->  Root User or Super User Commands will be there in sbin Directory. root user having normal user commands + Extra Admin Level Commands.
+/etc     --> application Configuration files will be stored in etc directory.
+/opt     --> Third Party Softwares will be installed in opt directory.
+/temp    --> Temparary files will be stored in this temp directory. if you reboot your system whatever files is available in temp directory also erasied.
+/root    --> root user having capable to run Admin Level Commands. Ex: sudo
+
+
+Linux Commands:
+---------------
+1) pwd     - it will display print working directory. in IT people calll it as Present working Directory
+2) whoami  - it will display the current login User name
+3) clear   - It will clear the Screen
+4) exit    - once run this command you will exit from the current shell session.
+5) man     -  it will display system's manual pages, which provide detailed documentation for commands
+6) touch   - it will create empty files in linux
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
