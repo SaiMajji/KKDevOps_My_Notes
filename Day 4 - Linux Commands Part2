@@ -1,0 +1,15 @@
+Linux Commands
+---------------
+
+1) Sort : it is used to sorting the data 
+    sort -f <file_name>   # -f means it will ignore the case sensitive. -i is not working here
+    sort -n <file-name>   # -n means it will sort the numericals. if file having only numerical values then if you want sort the data based numericals then you have pass the -n flag.
+                             if you won't pass -n flag it wiil not sort the data.
+
+2) vi : It is an Editor in Linux
+       i  --> insert Mode
+      esc --> comeout from insert mode
+      :wq --> save and Quit
+      :q! --> Just Quit (without save the file or modifying the file)
+
+3) head : it will display by default top or first 10 lines 
