@@ -12,4 +12,23 @@ Linux Commands
       :wq --> save and Quit
       :q! --> Just Quit (without save the file or modifying the file)
 
-3) head : it will display by default top or first 10 lines 
+      :se nu   --> vi test.txt  - command mode - if you enter :se nu it will display content with numbers - i  for insert mode 
+
+3) head : it will display by default top or first 10 lines in the file
+             head -n 15 error.txt   # It will display first 15 lines in error text file
+             head -n 3 text | cat -n   # It will display first 3 lines of content with number
+4) cat  : cat will display the content,insert and append data into a file. 
+          cat <file1> <file2>  > error.txt 
+          cat <file-name> , cat > <file_name> , cat >> test_file_name
+5) cp   : It is used to copy files from one location to another location. we can copy multiple files in one time to destination place or directory
+6) mv   : it is used to rename the file/directory name and also used to move the files from one location to another location.
+7) tail : by default it will display last 10 lies of data in a file
+         tail -n 11  error.txt # it will display the last 11 in a file
+         tail -n 3 error.txt | cat -n   # It will display last 3 lines of content with number
+         tail -f error.txt    --> to see floating logs / live logs
+
+8) grep : 
+
+         head -n 50 error.txt | tail -n 25 error.txt
+
+
