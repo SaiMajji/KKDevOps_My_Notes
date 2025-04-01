@@ -1,0 +1,164 @@
+Shell Scripting
+---------------
+1) Shell is responsible to read commands/applications provided by user. 
+2) Shell will check whether command is valid or not and whether it is properly used or not. If everything is proper then shell interpretes (converts) that command into kernel understandable form. That interpreted command will be handover to kernel. 
+3) Kernel is responsible to execute that command with the help of hardware. 
+ 
+--> Shell acts as interface between user and kernel. 
+--> shell+kernel  is nothing but operating system.
+
+--> A sequence of commands saved to a file and this file is nothing but shell script. 
+ 
+--> Inside shell script, we can also use programming features like conditional statements, loops, functions etc. Hence we can write scripts very easily for complex requirements also. 
+--> Best suitable for automated tasks.
+
+Purpose:
+--> Automation of repetitive tasks (e.g., backups, system monitoring).   
+--> System administration (e.g., managing user accounts, configuring systems).   
+--> Software development (e.g., automating builds, deployments)
+
+Shabang:
+-------
+By using sha-bang, we can specify the interpreter which is responsible to execute the
+script.
+#  --> Sharp
+!  --> Bang
+#! --> Sharp Bang or Shabang or Shebang
+#! /bin/bash --> It means the script should be executed by bash
+#! /bin/sh --> It means the script should be executed by Bourne Shell
+#! /usr/bin/python3 --> It means the script should be executed by Python3 interpreter
+
+--> The shebang line must be the very first line of the script. 
+--> The path to the interpreter must be an absolute path (e.g., /usr/bin/python3, not just python3).
+--> If the shebang line is missing, the OS usually tries to execute the script using the current shell, which might not be the correct interpreter.
+  
+The shebang line always starts with #! followed by the absolute path to the interpreter.
+
+Examples:
+
+          #!/bin/bash          : Uses the Bash shell to execute the script.
+          #!/usr/bin/python3   : Uses Python 3.
+          #!/usr/bin/perl      : Uses Perl.
+          #!/bin/sh            : Uses the Bourne shell.
+
+
+Basic Shell Scripting:
+----------------------
+Ex1:
+----
+[ec2-user@ip-172-31-9-235 ~]$ vi demo.sh
+     echo " Hi Welcome to shell Scripting"
+     date
+     cal
+[ec2-user@ip-172-31-9-235 ~]$ ls -l
+-rw-r--r--. 1 ec2-user ec2-user 47 Apr  1 07:04 demo.sh
+[ec2-user@ip-172-31-9-235 ~]$ chmod a+x demo.sh                     # giving execute permissions to all(users,groups and others as well)
+[ec2-user@ip-172-31-9-235 ~]$ ls -l
+-rwxr-xr-x. 1 ec2-user ec2-user 47 Apr  1 07:04 demo.sh
+
+[ec2-user@ip-172-31-9-235 ~]$ sh demo.sh        or   /bin/bash /home/ec2-user/demo.sh    or ./demo.sh
+ Hi Welcome to shell Scripting
+Tue Apr  1 07:04:39 UTC 2025
+     April 2025
+Su Mo Tu We Th Fr Sa
+       1  2  3  4  5
+ 6  7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30
+
+
+-----
+[ec2-user@ip-172-31-9-235 ~]$  echo $PATH
+/home/ec2-user/.local/bin:/home/ec2-user/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+[ec2-user@ip-172-31-9-235 ~]$ export PATH=$PATH:/home/ec2-user/
+[ec2-user@ip-172-31-9-235 ~]$  echo $PATH
+/home/ec2-user/.local/bin:/home/ec2-user/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/ec2-user/
+[ec2-user@ip-172-31-9-235 ~]$ demo.sh
+
+Note: 
+      Now we can run our script from anywhere. We are not required to provide either absolute path (or) relative path.
+      This way of setting PATH variable is applicable only for current session. Once we close terminal then automatically these changes will be lost.
+
+--> In our user home directory there is a file named with .bashrc. This file will be executed every time automatically whenever we open the terminal. If we define PATH variable in this file then that PATH value will become permanent and we are not required to setevery time.
+         
+--> Add the following line at bottom of this file
+Ex:
+      [ec2-user@ip-172-31-9-235 ~]$ export PATH=$PATH:/home/ec2-user/
+
+---------------------------
+
+
+Variables in Shell Scripting
+-----------------------------
+
+1) Pre-Defined Variables (or) Environment Variable
+2) User defined Variables
+
+
+
+1) Pre-Defined Variables (or) Environment Variable:
+---------------------------------------------------
+--> These are predefined variables and mostly used internally by the system. Hence these variables also known as System variables.
+--> We can get all environment variables information by using either "env" command
+
+Ex: HISTCONTROL=ignoredups
+    HISTFILE=/home/ec2-user/.bash_history
+    HISTFILESIZE=1000
+    HISTSIZE=1000
+    HOME=/home/ec2-user
+    HOSTNAME=ip-172-31-9-235.ap-south-1.compute.internal
+    PWD=/home/ec2-user
+    LOGNAME=ec2-user
+
+--> /home/ec2-user/.bash_history -- In this hidden file we are storing our history. by default HISTSIZE is 1000
+Ex: echo $HISTSIZE
+    export HISTSIZE=300
+    echo $HISTSIZE
+
+   Note: It is only for particular session, How to change permanently?
+   Ex:
+         ~/.bash_profile
+           export HISTSIZE=300
+           
+[ec2-user@ip-172-31-9-235 ~]$ ls -la
+
+      -rw-------. 1 ec2-user ec2-user 1661 Apr  1 08:01 .bash_history
+      -rw-r--r--. 1 ec2-user ec2-user   18 Jan 28  2023 .bash_logout
+      -rw-r--r--. 1 ec2-user ec2-user  141 Jan 28  2023 .bash_profile
+      -rw-r--r--. 1 ec2-user ec2-user  492 Jan 28  2023 .bashrc
+      -rw-------. 1 ec2-user ec2-user   20 Mar 30 13:09 .lesshst
+      drwx------. 2 ec2-user ec2-user   29 Mar 28 17:05 .ssh
+      -rw-------. 1 ec2-user ec2-user 1148 Apr  1 07:04 .viminfo
+
+How to Change Prompt:
+--------------------
+Internally PS1 Environment variable is responsible to display terminal prompt.By reassigning the value we can change prompt.
+
+Ex:
+
+    [ec2-user@ip-172-31-9-235 ~]$ PS1=sai
+    sai
+    sails -l
+    -rwxr-xr-x. 1 ec2-user ec2-user 47 Apr  1 07:04 demo.sh
+    sai$PS1=saimajji@ip172-31-9-235$
+    saimajji@ip172-31-9-235$
+
+
+2) User defined Variables:
+---------------------------
+
+--> Based on our programming requirement, we can define our own variables also.
+Ex:
+    [ec2-user@ip-172-31-9-235 ~]$ a=10
+    [ec2-user@ip-172-31-9-235 ~]$ echo "Hi A value is : $a"
+      Hi A value is : 10
+
+
+
+
+
+
+
+
+
