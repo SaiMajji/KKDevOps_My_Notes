@@ -18,9 +18,13 @@
 ## 📌 Purpose of Shell Scripting
 
 ✅ **Automation** of repetitive tasks (e.g., backups, system monitoring).
+
 ✅ **System Administration** (e.g., managing user accounts, configuring systems).
+
 ✅ **Software Development** (e.g., automating builds, deployments).
+
 ✅ **Task Scheduling** using cron jobs.
+
 ✅ **Monitoring System Logs** to detect issues early.
 
 ---
