@@ -32,8 +32,27 @@ Types of Shells(Manily):
 6. ZShell - Developed by Paul.by using zsh command we are acess this shell
 
 
+How To check default Shell for User:
+------------------------------------
+Method1: echo $0
+Method2: echo $SHELL     ( here SHELL is Predefined Variable it will give default Shell Value. by using env we 
+                           can see Predefined or System defined Variable )
+Method3: cat /etc/passwd   (ubuntu:x:1000:1000:Ubuntu:/home/ubuntu:/bin/bash)
 
 
+
+How to check available Shells in my System:
+--------------------------------------------
+cat /etc/shells
+Ex:
+    ubuntu@ip-172-31-14-39:~$ cat /etc/shells
+
+                  /bin/sh
+                  /usr/bin/sh
+                  /bin/bash
+                  /usr/bin/bash
+                  /bin/rbash
+                               
 
 
 Shabang:
