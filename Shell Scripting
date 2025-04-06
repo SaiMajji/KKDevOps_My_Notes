@@ -17,6 +17,22 @@ Purpose:
 --> System administration (e.g., managing user accounts, configuring systems).   
 --> Software development (e.g., automating builds, deployments)
 
+Types of Shells(Manily):
+------------------------
+1. Bourne Shell - was developed by Stephens Bourne. by using sh  we can execute our scrpts in Bourne Shell
+2. BASH - Bourne Again SHell .BASH was created as a free software replacement for the Bourne Shell, 
+           adding more features and improvements.
+3.Korn Shell - developed by David Korn.Mostly used in IBM AIX OS. we are using ksh for korne shell
+4. CShell - Developed by Bill joy from California University.Its syntax resembles the C programming language, 
+            making it more familiar to C programmers at the time. csh command we are using accessing Cshell
+5. TShell - Advanced Version of Cshell.Mostly Used in HP UNIX Systems. by using tcsh we are accessing TShell
+6. ZShell - Developed by Paul.by using zsh command we are acess this shell
+
+
+
+
+
+
 Shabang:
 -------
 By using sha-bang, we can specify the interpreter which is responsible to execute the
