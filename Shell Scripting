@@ -1,7 +1,9 @@
 Shell Scripting
 ---------------
 1) Shell is responsible to read commands/applications provided by user. 
-2) Shell will check whether command is valid or not and whether it is properly used or not. If everything is proper then shell interpretes (converts) that command into kernel understandable form. That interpreted command will be handover to kernel. 
+2) Shell will check whether command is valid or not and whether it is properly used or not. If everything 
+   is proper then shell interpretes (converts) that command into kernel understandable form that interpreted 
+   command will be handover to kernel. 
 3) Kernel is responsible to execute that command with the help of hardware. 
  
 --> Shell acts as interface between user and kernel. 
@@ -9,7 +11,8 @@ Shell Scripting
 
 --> A sequence of commands saved to a file and this file is nothing but shell script. 
  
---> Inside shell script, we can also use programming features like conditional statements, loops, functions etc. Hence we can write scripts very easily for complex requirements also. 
+--> Inside shell script, we can also use programming features like conditional statements, loops, functions 
+    etc. Hence we can write scripts very easily for complex requirements also. 
 --> Best suitable for automated tasks.
 
 Purpose:
@@ -46,7 +49,8 @@ script.
 
 --> The shebang line must be the very first line of the script. 
 --> The path to the interpreter must be an absolute path (e.g., /usr/bin/python3, not just python3).
---> If the shebang line is missing, the OS usually tries to execute the script using the current shell, which might not be the correct interpreter.
+--> If the shebang line is missing, the OS usually tries to execute the script using the current shell,
+     which might not be the correct interpreter.
   
 The shebang line always starts with #! followed by the absolute path to the interpreter.
 
@@ -93,10 +97,12 @@ Su Mo Tu We Th Fr Sa
 [ec2-user@ip-172-31-9-235 ~]$ demo.sh
 
 Note: 
-      Now we can run our script from anywhere. We are not required to provide either absolute path (or) relative path.
-      This way of setting PATH variable is applicable only for current session. Once we close terminal then automatically these changes will be lost.
-
---> In our user home directory there is a file named with .bashrc. This file will be executed every time automatically whenever we open the terminal. If we define PATH variable in this file then that PATH value will become permanent and we are not required to setevery time.
+--> Now we can run our script from anywhere. We are not required to provide either absolute path (or) relative path.
+--> This way of setting PATH variable is applicable only for current session. Once we close terminal then 
+    automatically these changes will be lost.
+--> In our user home directory there is a file named with .bashrc. This file will be executed every time 
+    automatically whenever we open the terminal. If we define PATH variable in this file then that PATH value
+    will become permanent and we are not required to setevery time.
          
 --> Add the following line at bottom of this file
 Ex:
@@ -115,7 +121,8 @@ Variables in Shell Scripting
 
 1) Pre-Defined Variables (or) Environment Variable:
 ---------------------------------------------------
---> These are predefined variables and mostly used internally by the system. Hence these variables also known as System variables.
+--> These are predefined variables and mostly used internally by the system. Hence these variables also 
+    known as System variables.
 --> We can get all environment variables information by using either "env" command
 
 Ex: HISTCONTROL=ignoredups
@@ -149,7 +156,8 @@ Ex: echo $HISTSIZE
 
 How to Change Prompt:
 --------------------
-Internally PS1 Environment variable is responsible to display terminal prompt.By reassigning the value we can change prompt.
+Internally PS1 Environment variable is responsible to display terminal prompt.By reassigning the value we can 
+change prompt.
 
 Ex:
 
