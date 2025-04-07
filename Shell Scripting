@@ -158,6 +158,66 @@ $ which sh
 
 ---------------------------
 
+Not Work: (it won't give output)
+---------
+$ echo $pwd
+$ echo $ls -l
+$ echo $cal           In Ubuntu ==> Before execute this command we need to install ncal.
+                       ==> sudo apt install ncal
+                      
+
+***Command Substitution
+   --------------------
+Methods to accessing the Commands
+
+old style : `command`   Ex: echo `pwd`
+new style : $(command)  Ex: echo $(pwd)
+
+Ex:
+---
+Q1) Print Only Todays Date not time?
+
+Ans:   $echo "Todays date is : $(date +%D) "     here +%D means display only Date not Time. 
+above command output ==> Todays date is : 04/07/25
+
+    
+$ echo "Time is : `date +%T` "   here +%T means display Only Time not Date
+==> Time is : 07:35:41
+
+Q2) To Print Number Files in Present/Print Working Directory?
+$ ls
+Test  demo.sh  project.txt  test.py
+Old :  $ echo "The Number Files: `ls|wc -l`  "      ==> The Number Files: 4
+New : $ echo "The Number Files: $(ls |wc -l) "      ==> The Number Files: 4
+
+
+
+$ echo  $(pwd) 
+ /home/ec2-user
+
+$ echo  $(ls -l) 
+-rwxr-xr-x. 1 ec2-user ec2-user   47 Apr  1 07:04 demo.sh
+
+$ echo  $(cal)
+2025 April Sunday Monday ...... Saturday 1 2 3 4 5 6 7 8 9 10 ...........30 31
+
+
+****Variable Substitution
+   -----------------------
+$ name="sai majji"
+$ echo '$name' --> $name     (output)
+$ echo "$name" --> sai majji (output)
+$ echo $name   --> sai majji
+$ echo name    --> name
+
+Note: 
+here i am taking string assigned to name variable.i am trying to access different possible ways i am getting the above output.
+****don't use single Quotes while accessing the Varibales. Variable Substitution won't be happend for single Quotes.
+
+
+
+
+
 
 Variables in Shell Scripting
 -----------------------------
@@ -228,40 +288,6 @@ Ex:
 
 
 ---------------------------------------------------
-
-
-Not Work: (it won't give output)
----------
-$ echo $pwd
-$ echo $ls -l
-$ echo $cal           In Ubuntu ==> Before execute this command we need to install ncal.
-                       ==> sudo apt install ncal
-                      
-
-Work
-----
-$ echo  $(pwd) 
- /home/ec2-user
-
-$ echo  $(ls -l) 
--rwxr-xr-x. 1 ec2-user ec2-user   47 Apr  1 07:04 demo.sh
-
-$ echo  $(cal)
-2025 April Sunday Monday ...... Saturday 1 2 3 4 5 6 7 8 9 10 ...........30 31
-
-
-Example
---------
-$ name="sai majji"
-$ echo '$name' --> $name     (output)
-$ echo "$name" --> sai majji (output)
-$ echo $name   --> sai majji
-$ echo name    --> name
-
-Note: 
-here i am taking string assigned to name variable.i am trying to access different possible ways i am getting the above output.
-****don't use single Quotes while accessing the Varibales. Variable Substitution won't be happend for single Quotes.
-
 
 
 
