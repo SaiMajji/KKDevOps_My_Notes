@@ -81,6 +81,12 @@ Examples:
           #!/bin/sh            : Uses the Bourne shell.
 
 
+Note: 
+     For Example in my script i have written Sha-Bang as ' #! /bin/sh ' and then i try to execute the script 
+using ' ./demo.sh ' (executing using Bourne Shell) . here Operating System (OS) will check the File 
+file is there Sha Bang is there are not. if it is availble then script will execute using thet Sha-Bang not by Default Bourne Shell. 
+If Sha-Bang is not there in file then script will execute by using default shell(Borune Shell).
+
 Basic Shell Scripting:
 ----------------------
 Ex1:
