@@ -229,15 +229,39 @@ Ex:
 
 ---------------------------------------------------
 
-[ec2-user@ip-172-31-9-235 ~]$ echo " $(pwd) "
+
+Not Work: (it won't give output)
+---------
+$ echo $pwd
+$ echo $ls -l
+$ echo $cal           In Ubuntu ==> Before execute this command we need to install ncal.
+                       ==> sudo apt install ncal
+                      
+
+Work
+----
+$ echo  $(pwd) 
  /home/ec2-user
-[ec2-user@ip-172-31-9-235 ~]$ echo " $(ls -la) "
--rw-------. 1 ec2-user ec2-user 2015 Apr  1 10:26 .bash_history
--rw-r--r--. 1 ec2-user ec2-user   18 Jan 28  2023 .bash_logout
--rw-r--r--. 1 ec2-user ec2-user  141 Jan 28  2023 .bash_profile
--rw-r--r--. 1 ec2-user ec2-user  492 Jan 28  2023 .bashrc
-drwx------. 2 ec2-user ec2-user   29 Mar 28 17:05 .ssh
+
+$ echo  $(ls -l) 
 -rwxr-xr-x. 1 ec2-user ec2-user   47 Apr  1 07:04 demo.sh
+
+$ echo  $(cal)
+2025 April Sunday Monday ...... Saturday 1 2 3 4 5 6 7 8 9 10 ...........30 31
+
+
+Example
+--------
+$ name="sai majji"
+$ echo '$name' --> $name     (output)
+$ echo "$name" --> sai majji (output)
+$ echo $name   --> sai majji
+$ echo name    --> name
+
+Note: 
+here i am taking string assigned to name variable.i am trying to access different possible ways i am getting the above output.
+****don't use single Quotes while accessing the Varibales. Variable Substitution won't be happend for single Quotes.
+
 
 
 
