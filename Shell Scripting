@@ -133,6 +133,29 @@ Note:
 Ex:
       [ec2-user@ip-172-31-9-235 ~]$ export PATH=$PATH:/home/ec2-user/
 
+
+
+Python script:
+--------------
+$ vi test.py
+
+#! /usr/bin/python3
+import random
+name= input("Enter Your Name : ")
+l=["sunny","nithya menon","trisha","deepika","anupama","Varalaxmi"]
+print("Hello :", name)
+print("congrats ... You are Going to marry : " ,random.choice(l))
+
+$ chmod +x test.py
+$ ./test.py
+
+To Know Interpreters we are using which command in Linux. if required interpreter is not there then you need to install.
+
+$ which python3    ===> /usr/bin/python3
+$ which python or which python2
+$ which perl
+$ which sh
+
 ---------------------------
 
 
